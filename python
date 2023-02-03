@@ -1,0 +1,43 @@
+import nltk
+import random
+from nltk.chat.util import Chat, reflections
+
+pairs = [
+    [
+        r"my name is (.*)",
+        ["Hello %1, How are you today?"]
+    ],
+    
+    [
+        r"hi|hey|hello",
+        ["Hello", "Hey there"]
+    ],
+    
+    [
+        r"what is your name ?",
+        ["I am a AI chatbot, you can call me Bot", "My name is Bot, nice to meet you!"]
+    ],
+    
+    [
+        r"how are you ?",
+        ["I'm doing good", "I'm fine", "Feel awesome!", "I'm okay", "I'm great!"]
+    ],
+    
+    [
+        r"sorry (.*)",
+        ["Its alright", "Its OK, never mind", "Its fine, don't worry about it"]
+    ],
+    
+    [
+        r"i am fine",
+        ["Great to hear that", "Awesome, glad to hear that"]
+    ],
+    
+    [
+        r"quit",
+        ["Bye bye, take care. See you soon :) "]
+    ],
+]
+
+chatbot = Chat(pairs, reflections)
+chatbot.converse()
